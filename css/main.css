@@ -1,0 +1,391 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.5em;
+    margin: 20px;
+
+}
+
+.red_p{
+  color: red;
+}
+
+
+.cta {
+    padding: 7px 20px;
+    background-color: #e67e22;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.cta:hover {
+    background-color: #d35400;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    padding: 60px 20px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+h2 {
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content img {
+    max-width: 45%;
+    border-radius: 10px;
+}
+
+
+.text-about{
+  margin-left: 30px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  text-align: justify;
+}
+
+
+.services-grid, .portfolio-grid, .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 400px;
+}
+
+.service-item, .portfolio-item, .testimonial-item {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
+
+.service-item img, .portfolio-item img {
+    width: 100%;
+    border-radius: 10px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+
+/* Оформление для основного блока */
+.service-item {
+    border: 1px solid #ddd;
+    padding-bottom: 80px;
+    text-align: center;
+    position: relative; /* Добавлено для правильного позиционирования */
+    z-index: 1; /* Устанавливаем z-index */
+}
+
+.service-item h3{
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-item p{
+  margin-top: 20px;
+  text-align: justify;
+}
+
+.button-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #e67e22;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 10px;
+    left: 110px;
+}
+
+.button-more:hover {
+    background-color: #d35400;
+}
+
+/* Оформление для всплывающего окна */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none; /* Изначально скрыто */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Окно на первом плане */
+}
+
+.popup:target {
+    display: flex; /* Показываем окно при активации */
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1000px;
+    max-height: 1000px; /* Максимальная высота для всплывающего окна */
+    text-align: center;
+    position: relative; /* Для правильного позиционирования крестика */
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 35px;
+    color: #333;
+    text-decoration: none;
+    z-index: 1001; /* Кнопка на переднем плане */
+}
+
+.close-popup:hover {
+    color: #d35400;
+}
+
+.gallery-container {
+    max-height: 750px; /* Максимальная высота для галереи */
+    overflow-y: auto; /* Прокрутка по вертикали */
+    border-radius: 5px;
+}
+
+.gallery-container::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* Галерея */
+.image-gallery {
+    display: flex;
+    flex-direction: column; /* Mobile first */
+    gap: 10px; /* Расстояние между элементами */
+}
+
+.image-gallery .column {
+    display: flex;
+    flex-direction: column; /* Вертикальная колонка */
+    gap: 10px; /* Расстояние между элементами */
+}
+
+.image-item img {
+    width: 100%; /* Ширина изображения */
+    border-radius: 5px; /* Закругление углов */
+    height: auto; /* Автоматическая высота изображений */
+    object-fit: cover; /* Позволяет изображению сохранить пропорции и заполнять контейнер */
+}
+
+/* Медиа-запрос для больших экранов */
+@media only screen and (min-width: 768px) {
+    .image-gallery {
+        flex-direction: row; /* Горизонтальная компоновка на больших экранах */
+    }
+    .image-gallery .column {
+        flex: 1; /* Колонки равной ширины */
+    }
+}
+
+
+
+.materials{
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  text-align: justify;
+}
+
+
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 45%; /* Уменьшенная ширина */
+    margin: auto; /* Центрирование */
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 200%; /* 100% для каждого слайда */
+}
+
+.slide {
+    width: 100%;
+    margin-top: 10px;
+    height: 400px; /* Укажите нужную высоту */
+    align-items: center;
+    justify-content: center;
+}
+
+.slide img{
+  max-width: 700px;
+  border-radius: 10px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+
+input[type="radio"] {
+    display: none;
+}
+
+#slide1:checked ~ .slides {
+    transform: translateX(0%);
+}
+#slide2:checked ~ .slides {
+    transform: translateX(-50%);
+}
+
+.navigation {
+    position: absolute;
+    bottom: 1px;
+    left: 45%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+.navigation label {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+    background: #625f5f;
+    transition: transform 0.5s ease;
+}
+
+.navigation label:checked{
+    background: #red;
+    transition: transform 0.5s ease;
+
+}
+
+.arrows {
+    position: absolute;
+    top: 160px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+
+.button-more-avito {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 12px;
+    background-color: #e67e22;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 0px;
+    left: 48%;
+}
+
+.button-more-avito:hover {
+    background-color: #d35400;
+}
+
+
+
+
+.contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 850px;
+    margin: auto;
+}
+
+.contacts img {
+    max-width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+
+.text-contact {
+  margin-left: 30px;
+  padding: 20px;
+  padding-right: 200px;
+  background-color: rgba(244, 244, 244, 0.8); /* 80% прозрачность для фона */
+  border-radius: 10px;
+  text-align: justify;
+
+}
+
+.text-contact p{
+  width: 100%;
+}
+
+
+
+
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+}
